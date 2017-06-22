@@ -1,0 +1,18 @@
+equals函数
+    1）在Object中的自带equals函数比较的是对象的引用是否指向同一块内存地址。
+    2）但是一般情况下，我们要比较两个对象时要比较它的值是否一致，为了达到需求，我们要进行重写。
+            public boolean equals(Object obj) {
+                if (this == obj)
+                    return true;
+                if (obj == null)
+                    return false;
+                if (getClass() != obj.getClass())
+                    return false;
+                Dog other = (Dog) obj;
+                if (age != other.age)
+                    return false;
+                return true;
+            }
+
+    3）与==的比较
+            系统equals函数和==是一样的，都是比较的地址值是否相同。
